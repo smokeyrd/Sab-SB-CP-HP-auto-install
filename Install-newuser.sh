@@ -59,7 +59,7 @@ apt-get install -y sabnzbdplus sabnzbdplus-theme-smpl sabnzbdplus-theme-plush sa
 
 write_param() {
 sed -i "s|$1[[:space:]]*=[[:space:]]*.*|$1=$2|g" $3
-write_param SB_USER username /etc/default/sabnzbdplus
+write_param SB_USER username /etc/default/sabnzbdplus }
 
 sudo nano /etc/default/sabnzbdplus
 
