@@ -57,8 +57,9 @@ add-apt-repository ppa:jcfp/ppa
 apt-get update
 apt-get install -y sabnzbdplus sabnzbdplus-theme-smpl sabnzbdplus-theme-plush sabnzbdplus-theme-iphone
 
-echo "Please configure your APP_PATH and $user settings"
-sleep 3
+write_param() {
+sed -i "s|$1[[:space:]]*=[[:space:]]*.*|$1=$2|g" $3
+write_param SB_USER username /etc/default/sabnzbdplus
 
 sudo nano /etc/default/sabnzbdplus
 
