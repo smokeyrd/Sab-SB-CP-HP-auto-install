@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-echo "THIS INSTALL IS ONLY FOR UBUNTU!!!"
+echo "THIS INSTALL IS ONLY FOR DEBIAN AND ITS BRANCHES!!!"
 echo "This installs SabNZBD, SickBeard, Couchpotato, and Headphones"
 echo "Please Hit Enter when the script asks you to hit Enter to add the repos."
 echo "Setup will continue in a few seconds."
