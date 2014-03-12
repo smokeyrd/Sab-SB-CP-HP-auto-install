@@ -5,4 +5,4 @@ CouchPotato
 Headphones
 nzbToMedia (postprocessing script)
 
-We are currently re-working the script to ask to a new username/password and then auto-configure the various components to work without any tinkering. If you are familiar with scripting and have a suggestion/optimization, please submit it!
+We are currently re-working the script to ask for a new username/password and then auto-configure the various components to work without any tinkering. If you are familiar with scripting and have a suggestion/optimization, please submit it!
