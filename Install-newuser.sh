@@ -52,10 +52,12 @@ echo "Adding user"
 echo "Installing SabNZBD"
 sleep 1
 
-apt-get -y install python-software-properties
-add-apt-repository ppa:jcfp/ppa
-apt-get update
-apt-get install -y sabnzbdplus sabnzbdplus-theme-smpl sabnzbdplus-theme-plush sabnzbdplus-theme-iphone
+mkdir /opt/usenettools
+cd /opt/usenettools
+git clone git://github.com/sabnzbd/sabnzbd.git
+cd sabnzbd
+git checkout 0.7.x
+cd ..
 
 write_param() {
 sed -i "s|$1[[:space:]]*=[[:space:]]*.*|$1=$2|g" $3
@@ -68,46 +70,52 @@ sleep 1
 
 echo "Installing SickBeard..."
 
-wget https://github.com/midgetspy/Sick-Beard/tarball/master -O sickbeard.tar.gz
-tar xf sickbeard.tar.gz
-mv midgetspy-Sick-Beard-* .sickbeard
-sudo mv .sickbeard/init.ubuntu /etc/init.d/sickbeard
+#wget https://github.com/midgetspy/Sick-Beard/tarball/master -O sickbeard.tar.gz
+#tar xf sickbeard.tar.gz
+#mv midgetspy-Sick-Beard-* .sickbeard
+#sudo mv .sickbeard/init.ubuntu /etc/init.d/sickbeard
+git clone git://github.com/jetskijoe/Sick-Beard.git
 
 echo "Please configure your APP_PATH and $user settings"
 sleep 3
 
-sudo nano /etc/init.d/sickbeard
-sudo update-rc.d sickbeard defaults
-sudo service sickbeard start
+#sudo nano /etc/init.d/sickbeard
+#sudo update-rc.d sickbeard defaults
+#sudo service sickbeard start
 
 echo "Sickbeard has completed Install"
 sleep 1
 
 echo "Installing Couchpotato"
 
-wget https://github.com/RuudBurger/CouchPotatoServer/tarball/master -O couchpotatoserver.tar.gz
-tar xvf couchpotatoserver.tar.gz
-mv RuudBurger-CouchPotatoServer-* .couchpotatoserver
-sudo mv .couchpotatoserver/init/ubuntu /etc/init.d/couchpotato
+#wget https://github.com/RuudBurger/CouchPotatoServer/tarball/master -O couchpotatoserver.tar.gz
+#tar xvf couchpotatoserver.tar.gz
+#mv RuudBurger-CouchPotatoServer-* .couchpotatoserver
+#sudo mv .couchpotatoserver/init/ubuntu /etc/init.d/couchpotato
+git clone git://github.com/RuudBurger/CouchPotatoServer.git
+cd CouchPotatoServer
+git checkout develop
+cd ..
 
 echo "Please configure your APP_PATH and $user settings"
 sleep 3
 
-sudo nano /etc/init.d/couchpotato
-sudo chmod +x /etc/init.d/couchpotato
-sudo update-rc.d couchpotato defaults
-sudo service couchpotato start
+#sudo nano /etc/init.d/couchpotato
+#sudo chmod +x /etc/init.d/couchpotato
+#sudo update-rc.d couchpotato defaults
+#sudo service couchpotato start
 
 echo "CouchPotato has completed Install"
 sleep 1
 
 echo "Installing Headphones"
 
-wget https://github.com/rembo10/headphones/tarball/master -O headphones.tar.gz
-tar xvf headphones.tar.gz
-mv rembo10-headphones-* .headphones
-sudo mv .headphones/init.ubuntu /etc/init.d/headphones
-sudo chmod +x /etc/init.d/headphones
+#wget https://github.com/rembo10/headphones/tarball/master -O headphones.tar.gz
+#tar xvf headphones.tar.gz
+#mv rembo10-headphones-* .headphones
+#sudo mv .headphones/init.ubuntu /etc/init.d/headphones
+#sudo chmod +x /etc/init.d/headphones
+git clone git://github.com/jetskijoe/headphones.git
 
 echo "Please configure your APP_PATH and Run_As settings"
 sleep 3
@@ -116,6 +124,12 @@ sudo nano /etc/init.d/headphones
 sudo update-rc.d headphones defaults
 sudo service headphones start
 
+echo "Installing nzbToMedia"
+cd /opt/usenettools
+git clone git://github.com/clinton-hall/nzbToMedia.git
+cd nzbToMedia
+git checkout dev
+cd ..
 
 clear
 echo "Install Complete...."
