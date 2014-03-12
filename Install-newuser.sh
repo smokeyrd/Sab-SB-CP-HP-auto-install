@@ -36,7 +36,7 @@ passentry()
    if ($userpass == $retyped)
    {
       finish()
-   },
+   }
    else 
    {
       passentry()
