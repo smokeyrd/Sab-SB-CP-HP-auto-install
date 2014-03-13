@@ -26,9 +26,7 @@ echo "Please enter your desired password"
 read userpass
 
 echo "Adding user"
-/usr/sbin/useradd -g smbusers -d /home/$username -s /bin/false -m $username
-/bin/passwdex $username $userpass
-
+useradd $username -p $userpass
 
 
 echo "Installing SabNZBD"
