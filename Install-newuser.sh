@@ -41,11 +41,11 @@ cd sabnzbd
 git checkout 0.7.x
 cd ..
 
-write_param() {
-sed -i "s|$1[[:space:]]*=[[:space:]]*.*|$1=$2|g" $3
-write_param SB_USER username /etc/default/sabnzbdplus }
+#write_param() {
+#sed -i "s|$1[[:space:]]*=[[:space:]]*.*|$1=$2|g" $3
+#write_param SB_USER username /etc/default/sabnzbdplus }
 
-sudo nano /etc/default/sabnzbdplus
+#sudo nano /etc/default/sabnzbdplus
 
 echo "SabNZBD Plus has completed Install"
 sleep 1
@@ -102,9 +102,9 @@ git clone git://github.com/jetskijoe/headphones.git
 echo "Please configure your APP_PATH and Run_As settings"
 sleep 3
 
-sudo nano /etc/init.d/headphones
-sudo update-rc.d headphones defaults
-sudo service headphones start
+#sudo nano /etc/init.d/headphones
+#sudo update-rc.d headphones defaults
+#sudo service headphones start
 
 echo "Installing nzbToMedia"
 cd /opt/usenettools
