@@ -8,17 +8,17 @@ echo "This script will also add a new user for the services. You may choose to d
 echo "Setup will continue in a few seconds."
 
 echo "Please be Patient ...."
-sleep 3
+#sleep 3
 
 if [ $(id -u) != "0" ]; then
     echo "You must be the superuser to run this script" >&2
     exit 1
 fi
-       
+
 # DISCLAIMER:
-# This script is made available to you without any express, implied or 
-# statutory warranty, not even the implied warranty of 
-# merchantability or fitness for a particular purpose, or the 
+# This script is made available to you without any express, implied or
+# statutory warranty, not even the implied warranty of
+# merchantability or fitness for a particular purpose, or the
 # warranty of title. The entire risk of the use or the results from the use of this script remains with you.
 
 echo "Enter the name of the NEW user"
@@ -29,12 +29,14 @@ if [ $passprompt = "yes" ]; then
      echo "Please enter your desired password"
      read userpass
 else
-     cat /dev/urandom | tr -cd 'a-f0-9' | head -c 6 | read userpass
+     userpass=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 6 | head -n 1)
 fi
 #need to have if/then that determines (at the end) if the random password was chosen and if so, print the password with the summary
 
 echo "Adding user"
-useradd $username -p $userpass
+useradd -m -p $userpass $username
+
+echo $username"'s new password is" $userpass
 
 
 echo "Installing SabNZBD"
