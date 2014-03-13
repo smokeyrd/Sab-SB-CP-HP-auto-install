@@ -23,14 +23,13 @@ fi
 
 echo "Enter the name of the NEW user"
 read username
-echo "Do you want us to create a random password(type "yes", anything else for false)?"
+echo "Do you want to specify a password? (type "yes", anything else we will make a new one)?"
 read passprompt
 if [ $passprompt = "yes" ]; then
      echo "Please enter your desired password"
      read userpass
 else
-     cat /dev/urandom | tr -cd 'a-f0-9' | head -c 6
-     read userpass
+     cat /dev/urandom | tr -cd 'a-f0-9' | head -c 6 | read userpass
 fi
 #need to have if/then that determines (at the end) if the random password was chosen and if so, print the password with the summary
 
