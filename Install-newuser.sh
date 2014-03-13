@@ -2,8 +2,9 @@
 
 clear
 echo "THIS INSTALL IS ONLY FOR DEBIAN AND ITS BRANCHES!!!"
-echo "This installs SabNZBD, SickBeard, Couchpotato, and Headphones"
-echo "Please Hit Enter when the script asks you to hit Enter to add the repos."
+echo "This installs SabNZBD, SickBeard, Couchpotato, nzbToMedia, and Headphones"
+echo " "
+echo "This script will also add a new user for the services. you may choose to define a password or use a system-generated password"
 echo "Setup will continue in a few seconds."
 
 echo "Please be Patient ...."
