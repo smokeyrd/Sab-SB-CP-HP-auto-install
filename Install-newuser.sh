@@ -20,26 +20,10 @@ fi
 # merchantability or fitness for a particular purpose, or the 
 # warranty of title. The entire risk of the use or the results from the use of this script remains with you.
 
-userentry()
-{
-   echo "Enter the name of the NEW user"
-   read username
-}
-
-passentry()
-{
-   #check it doesn't already exist
-   echo "Enter the password of the new user"
-   read userpass
-   echo "Re-type the password"
-   read retyped
-   if [[ $userpass == $retyped ]] ; then finish
-   else 
-   {
-       passentry()
-    }
-    fi
-}
+echo "Enter the name of the NEW user"
+read username
+echo "Please enter your desired password"
+read userpass
 
 echo "Adding user"
 /usr/sbin/useradd -g smbusers -d /home/$username -s /bin/false -m $username
