@@ -23,9 +23,9 @@ fi
 
 echo "Enter the name of the NEW user"
 read username
-echo "Do you want us to create a random password(type true, anything else for false)?"
+echo "Do you want us to create a random password(type "yes", anything else for false)?"
 read passprompt
-if [ $passprompt == "true" ]; then
+if [ $passprompt = "yes" ]; then
      echo "Please enter your desired password"
      read userpass
 else
