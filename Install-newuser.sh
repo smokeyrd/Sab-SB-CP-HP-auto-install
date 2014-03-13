@@ -33,14 +33,8 @@ passentry()
    read userpass
    echo "Re-type the password"
    read retyped
-   if ($userpass == $retyped)
-   {
-      finish()
-   }
-   else 
-   {
-      passentry()
-   }
+   if [[ $userpass == "$retyped" ]] ; then finish ; fi
+   else passentry()
 }
 
 echo "Adding user"
