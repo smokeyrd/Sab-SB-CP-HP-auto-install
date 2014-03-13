@@ -31,6 +31,7 @@ if [ $passprompt == "true" ]; then
 else
      cat /dev/urandom | tr -cd 'a-f0-9' | head -c 6
      read userpass
+fi
 #need to have if/then that determines (at the end) if the random password was chosen and if so, print the password with the summary
 
 echo "Adding user"
