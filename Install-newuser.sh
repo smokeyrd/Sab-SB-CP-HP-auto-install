@@ -4,7 +4,7 @@ clear
 echo "THIS INSTALL IS ONLY FOR DEBIAN AND ITS BRANCHES!!!"
 echo "This installs SabNZBD, SickBeard, Couchpotato, nzbToMedia, and Headphones"
 echo " "
-echo "This script will also add a new user for the services. you may choose to define a password or use a system-generated password"
+echo "This script will also add a new user for the services. You may choose to define a password or use a system-generated password."
 echo "Setup will continue in a few seconds."
 
 echo "Please be Patient ...."
@@ -23,8 +23,15 @@ fi
 
 echo "Enter the name of the NEW user"
 read username
-echo "Please enter your desired password"
-read userpass
+echo "Do you want us to create a random password(type true, anything else for false)?"
+read passprompt
+if [ $passprompt == "true" ]; then
+     echo "Please enter your desired password"
+     read userpass
+else
+     cat /dev/urandom | tr -cd 'a-f0-9' | head -c 6
+     read userpass
+#need to have if/then that determines (at the end) if the random password was chosen and if so, print the password with the summary
 
 echo "Adding user"
 useradd $username -p $userpass
