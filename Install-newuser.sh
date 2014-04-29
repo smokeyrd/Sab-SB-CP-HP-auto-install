@@ -31,7 +31,6 @@ if [ $passprompt = "yes" ]; then
 else
      userpass=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 6 | head -n 1)
 fi
-#need to have if/then that determines (at the end) if the random password was chosen and if so, print the password with the summary
 
 echo "Adding user"
 useradd -m -p $userpass $username
