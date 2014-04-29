@@ -123,6 +123,7 @@ cd ..
 
 clear
 echo "Install Complete...."
+echo $username"'s new password is" $userpass
 echo "Please see the various vendor websites for help/how to access your server interfaces"
 echo "Defaults are as follows:"
 echo "SabNZBD Plus: http://localhost:8080"
